@@ -56,6 +56,8 @@ todoList.addEventListener("click", function (e) {
 todoList.addEventListener("click", function (e) {
   if (e.target.tagName === "LI") {
     let clickedTodo = e.target;
+    let clickedTodoText = e.target.innerText;
+    console.log(clickedTodoText);
     if (!clickedTodo.finished) {
       //if the clicked to do is not finished, add the line
       clickedTodo.style.textDecoration = "line-through";
@@ -66,7 +68,7 @@ todoList.addEventListener("click", function (e) {
     }
 
     for (let i = 0; i < savedTodos.length; i++) {
-      if (savedTodos[i].task == clickedTodo.innerText) {
+      if (clickedTodoText.includes(savedTodos[i].task)) {
         savedTodos[i].finished = !savedTodos[i].finished;
         localStorage.setItem("todos", JSON.stringify(savedTodos));
       }

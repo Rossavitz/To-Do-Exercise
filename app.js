@@ -57,7 +57,6 @@ todoList.addEventListener("click", function (e) {
   if (e.target.tagName === "LI") {
     let clickedTodo = e.target;
     let clickedTodoText = e.target.innerText;
-    console.log(clickedTodoText);
     if (!clickedTodo.finished) {
       //if the clicked to do is not finished, add the line
       clickedTodo.style.textDecoration = "line-through";
